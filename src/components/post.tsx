@@ -36,6 +36,7 @@ const Post = (props: any) => {
         <h2>post title : {post.title}</h2>
         <p>post body : {post.body}</p>
         <Link to={`/posts/`+post.id}>show comments</Link>
+        <Link to={`/update/` + post.id }>Update</Link>
     </div>)
 }
 export default Post;

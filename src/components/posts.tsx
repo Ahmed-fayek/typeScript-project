@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Post from "./post";
 import './posts.css';
 import {Link} from 'react-router-dom';
-interface post {
+export interface post {
     id: number,
     userId: number,
     title: string,
@@ -19,6 +19,8 @@ const Posts = () => {
     }, [])
     return (<>
         <Link to={'/users'}> Users</Link>
+        <br></br>
+        <Link to={'/addPost'}> add post</Link>
         {posts.map((post: post) => {
 
              return (<div key={post.id} className="posts">
