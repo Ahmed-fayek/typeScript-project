@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Posts from './components/posts';
+import {Routes,Route} from 'react-router-dom';
+import Comments from './components/comments';
+import Users from './components/users';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Routes>
+        <Route path='/' element={<Posts />}></Route>
+        <Route path='/posts/:postId' element={<Comments />}></Route>
+        <Route path='/users' element={<Users />}></Route>
+      </Routes>
     </div>
   );
 }
